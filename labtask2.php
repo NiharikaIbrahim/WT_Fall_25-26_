@@ -190,3 +190,15 @@ function addActivity(){
 }
 var li=document.createElement("li");
 li.textContent=activityName;
+var removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.onclick = function () {
+                li.remove();
+            };
+li.appendChild(removeBtn);
+document.getElementById("activityList").appendChild(li);
+document.getElementById("activityInput").value="";
+        }
+    </script>
+    </body>
+    </html>
