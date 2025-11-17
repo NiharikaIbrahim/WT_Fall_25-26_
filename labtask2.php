@@ -172,3 +172,7 @@ if (!/^[0-9]+$/.test(phone))) {
      alert("Phone number must contain only digits!");
          return;
 }
+if (password!==confirmPassword) {
+     alert("Password do not matchs!");
+         return;
+}
