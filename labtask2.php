@@ -98,4 +98,25 @@
             <tr>
                 <td><input type="text" id="name"></td>
             </tr>
+             <tr>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="email"></td>
+            </tr>
+
+            <tr>
+                <td>Phone Number:</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="phone"></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+            </tr>
+            <tr>
+                <td><input type="password" id="password"></td>
+            </tr>
+
 
