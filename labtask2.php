@@ -153,4 +153,16 @@
 
         <ul id="activityList"></ul>
     </center>
+<script>
+function register(){
+    var name=document.getElementById("name").value.trim();
+     var email=document.getElementById("email").value.trim();
+     var phone=document.getElementById("phone").value.trim();
+     var password=document.getElementById("password").value.trim();
+     var confirmPassword=document.getElementById("confirmPassword").value.trim();
+if(!name || !email || !phone || !password || !confirmPassword){
+    alert("All fields are required!");
+    retur;
+}
 
+}
