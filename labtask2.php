@@ -164,5 +164,11 @@ if(!name || !email || !phone || !password || !confirmPassword){
     alert("All fields are required!");
     retur;
 }
-
+if (!email.includes("@")) {
+     alert("Email must contain '@'!");
+         return;
+}
+if (!/^[0-9]+$/.test(phone))) {
+     alert("Phone number must contain only digits!");
+         return;
 }
