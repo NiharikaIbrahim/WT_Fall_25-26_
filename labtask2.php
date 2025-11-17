@@ -176,3 +176,17 @@ if (password!==confirmPassword) {
      alert("Password do not matchs!");
          return;
 }
+document.getElementById("successMsg").innerHTML =
+                "✅ Registration Successful!<br><br>" +
+                "<b>Name:</b> " + name + "<br>" +
+                "<b>Email:</b> " + email + "<br>" +
+                "<b>Phone:</b> " + phone;
+        }
+function addActivity(){
+    var activityName= document.getElementById("activityInput").value.trim();
+}if(activityNae){
+    alert("please enter activity name!");
+    return;
+}
+var li=document.createElement("li");
+li.textContent=activityName;
