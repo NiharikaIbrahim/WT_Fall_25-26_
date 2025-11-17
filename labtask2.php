@@ -55,4 +55,35 @@
         border-top: 3px solid red;
         width: 60%;
     }
+    .success {
+        color: green;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background-color: #f1f1f1;
+        padding: 8px;
+        margin-top: 6px;
+        border-radius: 5px;
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li button {
+        background-color: #ff4444;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+    }
+</style>
 
