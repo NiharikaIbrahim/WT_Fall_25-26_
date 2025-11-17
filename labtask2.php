@@ -86,4 +86,16 @@
         cursor: pointer;
     }
 </style>
+<body>
+    <center>
+        <h1>Tech Festival Registration</h1>
+        <hr color="Red">
+
+        <table>
+            <tr>
+                <td>Full Name:</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name"></td>
+            </tr>
 
