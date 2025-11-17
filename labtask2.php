@@ -119,4 +119,38 @@
                 <td><input type="password" id="password"></td>
             </tr>
 
+<tr>
+                <td>Confirm Password:</td>
+            </tr>
+            <tr>
+                <td><input type="password" id="confirmPassword"></td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <button type="button" onclick="register()">Register</button>
+                </td>
+            </tr>
+        </table>
+
+        <div id="successMsg" class="success"></div>
+
+        <hr color="Red">
+        <h1>Activity Selection</h1>
+        <table>
+            <tr>
+                <td>Enter Activity Name:</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="activityInput"></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <button type="button" onclick="addActivity()">Add Activity</button>
+                </td>
+            </tr>
+        </table>
+
+        <ul id="activityList"></ul>
+    </center>
 
