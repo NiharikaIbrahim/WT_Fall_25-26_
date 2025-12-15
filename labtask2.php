@@ -162,13 +162,13 @@ function register(){
      var confirmPassword=document.getElementById("confirmPassword").value.trim();
 if(!name || !email || !phone || !password || !confirmPassword){
     alert("All fields are required!");
-    retur;
+    return;
 }
 if (!email.includes("@")) {
      alert("Email must contain '@'!");
          return;
 }
-if (!/^[0-9]+$/.test(phone))) {
+if (!/^[0-9]+$/.test(phone)) {
      alert("Phone number must contain only digits!");
          return;
 }
@@ -182,23 +182,27 @@ document.getElementById("successMsg").innerHTML =
                 "<b>Email:</b> " + email + "<br>" +
                 "<b>Phone:</b> " + phone;
         }
-function addActivity(){
-    var activityName= document.getElementById("activityInput").value.trim();
-}if(activityNae){
-    alert("please enter activity name!");
-    return;
+function addActivity() {
+    var activityName = document.getElementById("activityInput").value.trim();
+    if (!activityName) {
+        alert("Please enter activity name!");
+        return;
+    }
+
+    var li = document.createElement("li");
+    li.textContent = activityName;
+
+    var removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = function () {
+        li.remove();
+    };
+
+    li.appendChild(removeBtn);
+    document.getElementById("activityList").appendChild(li);
+    document.getElementById("activityInput").value = "";
 }
-var li=document.createElement("li");
-li.textContent=activityName;
-var removeBtn = document.createElement("button");
-            removeBtn.textContent = "Remove";
-            removeBtn.onclick = function () {
-                li.remove();
-            };
-li.appendChild(removeBtn);
-document.getElementById("activityList").appendChild(li);
-document.getElementById("activityInput").value="";
-        }
-    </script>
-    </body>
-    </html>
+</script>
+
+</body>
+ </html>

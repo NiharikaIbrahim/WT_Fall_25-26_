@@ -1,149 +1,99 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<body> 
+    <h2>Event Booking Form</h2> 
+    <form id="regForm"> 
  
-<head>
-        <title>
-            WT_0
-</title>
-</head>
-<style>
-    body {
-        background-color: white
+        <label>Full Name:</label> 
+        <input type="text" class="inputs"> 
+        <span class="error"></span><br> 
  
-    }
-   
-</style>
+        <label>Email:</label> 
+        <input type="email" class="inputs"> 
+        <span class="error"></span><br> 
  
-<body>
- <center>
-<table>
- <h1 style ="color:red;font-size:30px">Student Registration Information</h1>
- <hr color = "Red">
+        <label>Number of Tickets:</label> 
+        <input type="number" class="inputs"> 
+        <span class="error"></span><br> 
  
-<tr>
-<td>Enter Your Frist Name:</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
+        <label>Event Type:</label> 
+        <select class="inputs"> 
+            <option value="Workshop">Workshop</option> 
+            <option value="Seminar">Seminar</option> 
+            <option value="Networking">Networking</option> 
+        </select> 
+        <span class="error"></span><br> 
  
-<tr>
-<td>Enter Your Last Name:</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
-
-<tr>
-<td>Enter Your Student ID:</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
+        <label>DOB:</label> 
+        <input type="date" class="inputs"> 
+        <span class="error"></span><br> 
  
+        <label>Agree Terms & Condition:</label> 
+        <input type="checkbox" class="inputs"> 
+        <span class="error"></span><br> 
  
-<tr>
-<td>Program/Major:</td>
-</tr>
+        <br><br> 
+        <button type="submit"> Book Now</button> 
+    </form>
+<script>
+    const form = document.getElementById("regForm"); 
+const inputs = document.querySelectorAll(".inputs"); 
+let error = document.querySelectorAll(".error"); 
  
-<tr>
-        <td><select name="sub" id="sub">
-            <option value="CSE">BSc in CSE</option>
-                        <option value="EEE">BSc in EEE</option>
-                                    <option value="BBa">BSc in BBA</option>
-                                                <option value="English">BSc in ENGLISH</option>
-        </select></td>
-    </tr>
+form.addEventListener("submit", function (event) { 
+    let ok = true; 
  
+    if (inputs[0].value === "") { 
+        error[0].innerHTML = "Name is required."; 
+        ok = false; 
+    } else { 
+        error[0].innerHTML = ""; 
+    } 
  
-<tr>
-<td>Department:</td>
-</tr>
-<tr>
-        <td><select name="sub" id="sub">
-            <option value="FST">FST</option>
-                        <option value="FBA">FBA</option>
-                                    <option value="FA">FA</option>
-                                                <option value="FP">FP</option>
-        </select></td>
-    </tr>
+    if (inputs[1].value === "") { 
+        error[1].innerHTML = "Email required."; 
+        ok = false; 
+    } else { 
+        error[1].innerHTML = ""; 
+    } 
  
+    const ticketNum = Number(inputs[2].value); 
+    if (inputs[2].value === "") { 
+        error[2].innerHTML = "Tickets is required."; 
+        ok = false; 
+    } else if (isNaN(ticketNum) || ticketNum <= 0) { 
+        error[2].innerHTML = "Must be a positive number."; 
+        ok = false; 
+    } else { 
+        error[2].innerHTML = ""; 
+    } 
  
-<tr>
-<td>Phone</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
-<tr>
+    if (inputs[3].value === "") { 
+        error[3].innerHTML = "Type required."; 
+        ok = false; 
+    } else { 
+        error[3].innerHTML = ""; 
+    } 
  
-<tr>
-<td>University name</td>
-</tr>
-
-<tr>
-<td><input type="text"></td>
-</tr>
-<tr>
+    if (inputs[4].value === "") { 
+        error[4].innerHTML = "DOB is required."; 
+        ok = false; 
+    } else { 
+        error[4].innerHTML = ""; 
+    } 
  
-<tr>
-<td>Create Password (8 Character)</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
-<tr>
+    if (!inputs[5].checked) { 
+        error[5].innerHTML = "Must agree to terms."; 
+        ok = false; 
+    } else { 
+        error[5].innerHTML = ""; 
+    } 
  
-<tr>
-<td>Confrim Password (8 Character)</td>
-</tr>
-<tr>
-<td><input type="text"></td>
-</tr>
-<tr>
- 
-<tr>
-<td>Select Semester</td>
-</tr>
- 
-<td><input type="radio" name="PC">summer 2024
-    <input type="radio"  name="PC">Fall 2024
-    <input type="radio"  name="PC">Spring 2024
-    <input type="radio"  name="PC">Other/special Term
-</td>
- <tr>
- <td>Requested Credit Load</td>
-</tr>
-<tr>
- <td><input type="number"placeholder="e.g, 9 or 12"></td>
-
-</tr>
- <tr>
-                <td><input type="checkbox"> I required academic advising before final registration</td>
-            </tr>
-        </table>
-        <h1>Course Selection</h1>
-        <hr color="red">
-</tr>
-
-
-<tr>
- <input type="checkbox">MATH 1201(Calculus I)
-  <input type="checkbox">CS 2105 (Data Structures)
-  <input type="checkbox">ECON 1001(Microeconomics)
-  <input type="checkbox">PHY 1102 (Physics Lab)
-</tr>
-<br>
-<input type="submit" value="Submit">
-<input type="reset" value="Reset">
-
-</center>
- 
- 
- 
- 
- 
-</table>  
+    if (!ok) { 
+        event.preventDefault(); 
+    } else { 
+        alert("Booking successful"); 
+    } 
+}); 
+</script>
 </body>
 </html>
- 
- 
